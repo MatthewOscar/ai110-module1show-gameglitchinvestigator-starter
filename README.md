@@ -33,6 +33,23 @@ It wrote the code, ran away, and now the game is unplayable.
 
 - [ ] [Insert a screenshot of your fixed, winning game here]
 
+## 💡 Guiding Hints for Students
+
+**"The hints are backwards"**
+> Look at `check_guess`. When `guess > secret`, what message does it actually return?
+
+**"I can never win even when I type the right number"**
+> Add `print(type(secret), type(guess))` before the comparison. Are they the same type? Trace back to where `secret` gets passed in.
+
+**"My attempts start at 1 before I even guess"**
+> Find where `st.session_state.attempts` is first set. What's the value? What should it be?
+
+**"After winning, New Game doesn't work"**
+> What is `st.session_state.status` after you win? It needs to get reset to `"playing"`...
+
+**"pytest fails right away"**
+> Read the first failure message. `check_guess` returns a tuple — try `outcome, message = check_guess(...)` instead of `result = check_guess(...)`.
+
 ## 🚀 Stretch Features
 
 - [ ] [If you choose to complete Challenge 4, insert a screenshot of your Enhanced Game UI here]
